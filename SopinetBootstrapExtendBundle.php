@@ -5,7 +5,7 @@
 * (c) 2013 by Fernando Hidalgo - Sopinet
 */
 
-namespace Sopinet\Bundle\BootstrapSopinetBundle;
+namespace Sopinet\Bundle\BootstrapExtendBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
