@@ -85,6 +85,18 @@ class SopinetBootstrapExtendExtension extends Extension implements PrependExtens
     {
         $output = array();
 
+				// Default true
+				if ($config['include_jquery']) {
+					$output['include_js']['inputs'][] = $config['assets_dir']."/jquery/js/jquery-1.9.1.min.js";	
+				}
+
+				// Default true
+				if ($config['include_bootstrap']) {
+					$output['include_css']['inputs'][] = $config['assets_dir']."/bootstrap/css/bootstrap.min.css";
+					$output['include_css']['inputs'][] = $config['assets_dir']."/bootstrap/css/bootstrap-responsive.min.css";
+					$output['include_js']['inputs'][] = $config['assets_dir']."/bootstrap/js/bootstrap.min.js";
+				}
+
 				foreach($config['include'] as $inc) {
 					switch($inc) {
 						case 'datepicker':

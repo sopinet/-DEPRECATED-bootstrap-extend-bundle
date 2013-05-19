@@ -32,6 +32,8 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
+								->booleanNode('include_jquery')->defaultValue(true)->end()
+								->booleanNode('include_bootstrap')->defaultValue(true)->end()
 								->scalarNode('output_dir')->defaultValue('')->end()
                 ->scalarNode('assets_dir')
                     ->defaultValue('%kernel.root_dir%/../vendor/sopinet/bootstrap-extend-bundle/Sopinet/Bundle/BootstrapExtendBundle/Resources/public')
@@ -39,7 +41,7 @@ class Configuration implements ConfigurationInterface
 								->arrayNode('include')
 									->prototype('scalar')
 									->validate()
-										->ifNotInArray(array('jcrop','font-awesome','datepicker','image-gallery','jqueryform','jwplayer'))
+										->ifNotInArray(array('font-awesome','jcrop','datepicker','image-gallery','jqueryform','jwplayer'))
 										->thenInvalid('Invalid include library "%s"')
 									->end()
 								->end()
