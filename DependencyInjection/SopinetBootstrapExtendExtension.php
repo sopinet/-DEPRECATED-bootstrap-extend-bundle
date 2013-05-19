@@ -113,7 +113,7 @@ class SopinetBootstrapExtendExtension extends Extension implements PrependExtens
 						break;						
 						case 'jcrop':
 							$output['include_css']['inputs'][] = $config['assets_dir']."/jcrop/css/jquery.Jcrop.min.css";
-							$output['include_css']['inputs'][] = $config['assets_dir']."/jcrop/js/jquery.Jcrop.min.js";
+							$output['include_js']['inputs'][] = $config['assets_dir']."/jcrop/js/jquery.Jcrop.min.js";
 						break;
 						case 'jqueryform':
 							$output['include_js']['inputs'][] = $config['assets_dir']."/jqueryform/jquery.form.js";
