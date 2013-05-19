@@ -97,7 +97,7 @@ class SopinetBootstrapExtendExtension extends Extension implements PrependExtens
 
 				$output['include_js']['output'] = $config['output_dir'].'js/include.js';
 
-				$output['include_css']['filters'][] = 'rewrite';
+				//TODO: Active filters by default, $output['include_css']['filters'][] = 'rewrite';
 				$output['include_css']['output'] = $config['output_dir'].'css/include.css';
 
         return $output;
