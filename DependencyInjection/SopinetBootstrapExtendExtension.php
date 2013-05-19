@@ -84,13 +84,30 @@ class SopinetBootstrapExtendExtension extends Extension implements PrependExtens
     private function buildIncludes(array $config)
     {
         $output = array();
+
 				foreach($config['include'] as $inc) {
 					switch($inc) {
-						case 'jcrop':
-							$output['include_css']['inputs'][] = $config['assets_dir']."/jcrop/css/jquery.Jcrop.min.css";
+						case 'datepicker':
+							$output['include_css']['inputs'][] = $config['assets_dir']."/datepicker/css/datepicker.css";
+							$output['include_js']['inputs'][] = $config['assets_dir']."/datepicker/js/bootstrap-datepicker.js";
 						break;
 						case 'font-awesome':
 							$output['include_css']['inputs'][] = $config['assets_dir']."/font-awesome/css/font-awesome.min.css";
+							$output['include_css']['inputs'][] = $config['assets_dir']."/font-awesome/css/font-awesome-ie7.css";
+						break;
+						case 'image-gallery':
+							$output['include_css']['inputs'][] = $config['assets_dir']."/image-gallery/css/bootstrap-image-gallery.min.css";
+							$output['include_js']['inputs'][] = $config['assets_dir']."/image-gallery/js/bootstrap-image-gallery.min.js";
+						break;						
+						case 'jcrop':
+							$output['include_css']['inputs'][] = $config['assets_dir']."/jcrop/css/jquery.Jcrop.min.css";
+							$output['include_css']['inputs'][] = $config['assets_dir']."/jcrop/js/jquery.Jcrop.min.js";
+						break;
+						case 'jqueryform':
+							$output['include_js']['inputs'][] = $config['assets_dir']."/jqueryform/jquery.form.js";
+						break;
+						case 'jwplayer':
+							$output['include_js']['inputs'][] = $config['assets_dir']."/jwplayer/jwplayer.js";
 						break;
 					}
 				}
@@ -101,5 +118,10 @@ class SopinetBootstrapExtendExtension extends Extension implements PrependExtens
 				$output['include_css']['output'] = $config['output_dir'].'css/include.css';
 
         return $output;
+    }
+
+    public function getAlias()
+    {
+        return 'sopinet_bootstrap_extend';
     }
 }

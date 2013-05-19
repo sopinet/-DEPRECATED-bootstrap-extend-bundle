@@ -28,10 +28,11 @@ class Configuration implements ConfigurationInterface
     private function buildConfigTree()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('sopinet_bootstrapextend');
+        $rootNode = $treeBuilder->root('sopinet_bootstrap_extend');
 
         $rootNode
             ->children()
+								->scalarNode('output_dir')->defaultValue('')->end()
                 ->scalarNode('assets_dir')
                     ->defaultValue('%kernel.root_dir%/../vendor/sopinet/bootstrap-extend-bundle/Sopinet/Bundle/BootstrapExtendBundle/Resources/public')
                 ->end()
@@ -70,7 +71,7 @@ class Configuration implements ConfigurationInterface
                     ->end()
                 ->end()
 */
-            ->end();
+  //          ->end();
 
         return $treeBuilder;
     }

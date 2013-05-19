@@ -28,11 +28,15 @@ class SopinetBootstrapExtendExtension extends Extension implements PrependExtens
         $configuration = new Configuration();
         $this->processConfiguration($configuration, $configs);
 
+				/*
+				* No need services
+				*
         $loader = new Loader\YamlFileLoader(
             $container,
             new FileLocator(__DIR__.'/../Resources/config')
         );
         $loader->load('services.yml');
+				*/
     }
 
     /**
@@ -69,7 +73,7 @@ class SopinetBootstrapExtendExtension extends Extension implements PrependExtens
                     $container->prependExtensionConfig(
                         $name,
                         array(
-                            'assets' => $this->buildAsseticConfig($config)
+                            'assets' => $this->buildIncludes($config)
                         )
                     );
                     break;
@@ -77,83 +81,41 @@ class SopinetBootstrapExtendExtension extends Extension implements PrependExtens
         }
     }
 
-    private function buildAsseticConfig(array $config)
+    private function buildIncludes(array $config)
     {
         $output = array();
-        if ($config['less_filter'] !== 'none') {
-            $output['bootstrap_css'] = $this->buildAsseticBootstrapCssWithLessConfig($config);
-        } else {
-            $output['bootstrap_css'] = $this->buildAsseticBootstrapCssWithoutLessConfig($config);
-        }
-        $output['bootstrap_js'] = $this->buildAsseticBootstrapJsConfig($config);
-        $output['jquery'] = $this->buildAsseticJqueryConfig($config);
+
+				foreach($config['include'] as $inc) {
+					switch($inc) {
+						case 'datepicker':
+							$output['include_css']['inputs'][] = $config['assets_dir']."/datepicker/css/datepicker.css";
+							$output['include_js']['inputs'][] = $config['assets_dir']."/datepicker/js/bootstrap-datepicker.js";
+						break;
+						case 'font-awesome':
+							$output['include_css']['inputs'][] = $config['assets_dir']."/font-awesome/css/font-awesome.min.css";
+							$output['include_css']['inputs'][] = $config['assets_dir']."/font-awesome/css/font-awesome-ie7.css";
+						break;
+						case 'image-gallery':
+							$output['include_css']['inputs'][] = $config['assets_dir']."/image-gallery/css/bootstrap-image-gallery.min.css";
+							$output['include_js']['inputs'][] = $config['assets_dir']."/image-gallery/js/bootstrap-image-gallery.min.js";
+						break;						
+						case 'jcrop':
+							$output['include_css']['inputs'][] = $config['assets_dir']."/jcrop/css/jquery.Jcrop.min.css";
+							$output['include_css']['inputs'][] = $config['assets_dir']."/jcrop/js/jquery.Jcrop.min.js";
+						break;
+					}
+				}
+
+				$output['include_js']['output'] = $config['output_dir'].'js/include.js';
+
+				//TODO: Active filters by default, $output['include_css']['filters'][] = 'rewrite';
+				$output['include_css']['output'] = $config['output_dir'].'css/include.css';
+
         return $output;
     }
 
-    private function buildAsseticBootstrapCssWithoutLessConfig(array $config)
+    public function getAlias()
     {
-        $inputs = array(
-            $config['assets_dir'].'/docs/assets/css/bootstrap.css',
-        );
-
-        if ($config['include_responsive'] === true) {
-            $inputs[] = $config['assets_dir'].'/docs/assets/css/bootstrap-responsive.css';
-        }
-
-        return array(
-            'inputs' => $inputs,
-            'filters' => array('cssrewrite'),
-            'output' => $config['output_dir'].'/css/bootstrap.css'
-        );
-    }
-
-    private function buildAsseticBootstrapCssWithLessConfig(array $config)
-    {
-        $inputs = array(
-            $config['assets_dir'].'/less/bootstrap.less'
-        );
-
-        if ($config['include_responsive'] === true) {
-            $inputs[] = $config['assets_dir'].'/less/responsive.less';
-        }
-
-        $inputs[] = __DIR__.'/../Resources/less/form.less';
-
-        return array(
-            'inputs' => $inputs,
-            'filters' => array($config['less_filter'], 'cssrewrite'),
-            'output' => $config['output_dir'].'/css/bootstrap.css'
-        );
-    }
-
-    private function buildAsseticBootstrapJsConfig(array $config)
-    {
-        return array(
-            'inputs' => array(
-                $config['assets_dir'].'/js/bootstrap-transition.js',
-                $config['assets_dir'].'/js/bootstrap-alert.js',
-                $config['assets_dir'].'/js/bootstrap-button.js',
-                $config['assets_dir'].'/js/bootstrap-carousel.js',
-                $config['assets_dir'].'/js/bootstrap-collapse.js',
-                $config['assets_dir'].'/js/bootstrap-dropdown.js',
-                $config['assets_dir'].'/js/bootstrap-modal.js',
-                $config['assets_dir'].'/js/bootstrap-tooltip.js',
-                $config['assets_dir'].'/js/bootstrap-popover.js',
-                $config['assets_dir'].'/js/bootstrap-scrollspy.js',
-                $config['assets_dir'].'/js/bootstrap-tab.js',
-                $config['assets_dir'].'/js/bootstrap-typeahead.js',
-                $config['assets_dir'].'/js/bootstrap-affix.js',
-                __DIR__.'/../Resources/js/bc-bootstrap-collection.js'
-            ),
-            'output' => $config['output_dir'].'/js/bootstrap.js'
-        );
-    }
-
-    private function buildAsseticJqueryConfig(array $config)
-    {
-        return array(
-            'inputs' => array($config['jquery_path']),
-            'output' => $config['output_dir'].'/js/jquery.js'
-        );
+        return 'sopinet_bootstrap_extend';
     }
 }

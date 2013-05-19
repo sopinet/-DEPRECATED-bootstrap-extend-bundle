@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<title>{% block title %}SopinetBootstrapExtend{% endblock %}</title>
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    	{% stylesheets
+				'css/include.css'
+    		'bundles/sopinetbootstrapextend/bootstrap/css/bootstrap.min.css'
+    		'@SopinetBootstrapExtendBundle/Resources/public/bootstrap/css/bootstrap-responsive.min.css' 
+    		filter='cssrewrite' %}
+    		<link rel="stylesheet" href="{{ asset_url }}" />
+		{% endstylesheets %}    	
+    	
+    	{% block css %}{% endblock %}
+    </head>
+    <body>
+    	{% block body %}{% endblock %}
+
+		{% javascripts 
+			'js/include.js'
+			'@SopinetBootstrapExtendBundle/Resources/public/jquery/js/jquery-1.9.1.min.js'
+			'@SopinetBootstrapExtendBundle/Resources/public/bootstrap/js/bootstrap.min.js' 
+		%}
+		    <script type="text/javascript" src="{{ asset_url }}"></script>
+		{% endjavascripts %}
+    	
+		{% block js %}{% endblock %}
+    </body>
+</html>

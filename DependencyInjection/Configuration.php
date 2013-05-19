@@ -28,7 +28,7 @@ class Configuration implements ConfigurationInterface
     private function buildConfigTree()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('sopinet_bootstrapextend');
+        $rootNode = $treeBuilder->root('sopinet_bootstrap_extend');
 
         $rootNode
             ->children()
@@ -39,7 +39,7 @@ class Configuration implements ConfigurationInterface
 								->arrayNode('include')
 									->prototype('scalar')
 									->validate()
-										->ifNotInArray(array('jcrop','font-awesome'))
+										->ifNotInArray(array('jcrop','font-awesome','datepicker','image-gallery','jqueryform','jwplayer'))
 										->thenInvalid('Invalid include library "%s"')
 									->end()
 								->end()
