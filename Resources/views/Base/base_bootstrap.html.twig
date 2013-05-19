@@ -11,10 +11,7 @@
     		<link rel="stylesheet" href="{{ asset_url }}" />
 		{% endstylesheets %}    	
     	
-    	{% block css1 %}{% endblock %}
-    	{% block css2 %}{% endblock %}
-    	{% block css3 %}{% endblock %}
-    	{% block more_css %}{% endblock %}
+    	{% block css %}{% endblock %}
     </head>
     <body>
     	{% block body %}{% endblock %}
@@ -26,9 +23,6 @@
 		    <script type="text/javascript" src="{{ asset_url }}"></script>
 		{% endjavascripts %}
     	
-		{% block js1 %}{% endblock %}
-		{% block js2 %}{% endblock %}
-		{% block js3 %}{% endblock %}
-		{% block more_js %}{% endblock %}
+		{% block js %}{% endblock %}
     </body>
 </html>
