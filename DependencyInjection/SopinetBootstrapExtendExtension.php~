@@ -85,16 +85,20 @@ class SopinetBootstrapExtendExtension extends Extension implements PrependExtens
     {
         $output = array();
 
+				// Default true
+				if ($config['include_jquery']) {
+					$output['include_js']['inputs'][] = $config['assets_dir']."/jquery/js/jquery-1.9.1.min.js";	
+				}
+
+				// Default true
+				if ($config['include_bootstrap']) {
+					$output['include_css']['inputs'][] = $config['assets_dir']."/bootstrap/css/bootstrap.min.css";
+					$output['include_css']['inputs'][] = $config['assets_dir']."/bootstrap/css/bootstrap-responsive.min.css";
+					$output['include_js']['inputs'][] = $config['assets_dir']."/bootstrap/js/bootstrap.min.js";
+				}
+
 				foreach($config['include'] as $inc) {
 					switch($inc) {
-						case 'jquery':
-							$output['include_js']['inputs'][] = $config['assets_dir']."/jquery/js/jquery-1.9.1.min.js";	
-						break;
-						case 'bootstrap':
-							$output['include_css']['inputs'][] = $config['assets_dir']."/bootstrap/css/bootstrap.min.css";
-							$output['include_css']['inputs'][] = $config['assets_dir']."/bootstrap/css/bootstrap-responsive.min.css";
-							$output['include_js']['inputs'][] = $config['assets_dir']."/bootstrap/js/bootstrap.min.js";
-						break;
 						case 'datepicker':
 							$output['include_css']['inputs'][] = $config['assets_dir']."/datepicker/css/datepicker.css";
 							$output['include_js']['inputs'][] = $config['assets_dir']."/datepicker/js/bootstrap-datepicker.js";
@@ -109,7 +113,7 @@ class SopinetBootstrapExtendExtension extends Extension implements PrependExtens
 						break;						
 						case 'jcrop':
 							$output['include_css']['inputs'][] = $config['assets_dir']."/jcrop/css/jquery.Jcrop.min.css";
-							$output['include_css']['inputs'][] = $config['assets_dir']."/jcrop/js/jquery.Jcrop.min.js";
+							$output['include_js']['inputs'][] = $config['assets_dir']."/jcrop/js/jquery.Jcrop.min.js";
 						break;
 						case 'jqueryform':
 							$output['include_js']['inputs'][] = $config['assets_dir']."/jqueryform/jquery.form.js";

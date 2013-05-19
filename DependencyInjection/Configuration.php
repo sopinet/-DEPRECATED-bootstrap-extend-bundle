@@ -34,7 +34,7 @@ class Configuration implements ConfigurationInterface
             ->children()
 								->booleanNode('include_jquery')->defaultValue(true)->end()
 								->booleanNode('include_bootstrap')->defaultValue(true)->end()
-								->scalarNode('output_dir')->defaultValue('bundles/sopinetbootstrapextend/export/')->end()
+								->scalarNode('output_dir')->defaultValue('')->end()
                 ->scalarNode('assets_dir')
                     ->defaultValue('%kernel.root_dir%/../vendor/sopinet/bootstrap-extend-bundle/Sopinet/Bundle/BootstrapExtendBundle/Resources/public')
                 ->end()

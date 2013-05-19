@@ -124,10 +124,10 @@ class SopinetBootstrapExtendExtension extends Extension implements PrependExtens
 					}
 				}
 
-				$output['include_js']['output'] = $config['output_dir'].'js/include.js';
+				$output['include_js']['output'] = $config['output_dir'].'bundles/sopinetbootstrapextend/export/js/include.js';
 
 				//TODO: Active filters by default, $output['include_css']['filters'][] = 'rewrite';
-				$output['include_css']['output'] = $config['output_dir'].'css/include.css';
+				$output['include_css']['output'] = $config['output_dir'].'bundles/sopinetbootstrapextend/export/css/include.css';
 
         return $output;
     }
