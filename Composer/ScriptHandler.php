@@ -17,10 +17,17 @@ class ScriptHandler
      */
     public static function copyExport(CommandEvent $event)
     {
-			echo "Creating directory img link for BootstrapExtend";
+			echo "Creating directory img and font link for BootstrapExtend";
+
 			$ori_dir = "bundles/sopinetbootstrapextend/export/img";
 			$link = "web/img";
-
+			unlink($link);
 			symlink($ori_dir, $link);
+
+			$ori_dir = "bundles/sopinetbootstrapextend/export/font";
+			$link = "web/font";
+			unlink($link);
+			symlink($ori_dir, $link);
+
 		}
 }
