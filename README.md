@@ -26,6 +26,23 @@ Installation via composer
       ]
     }
     
+Configuration
+-------------
+
+You can configure what librey include, by default only jquery and bootstrap, for add more:
+
+sopinet_bootstrap_extend:
+    include: [ jcrop, image-gallery, font-awesome, jqueryform, datepicker ]
+
+Usage
+-----
+
+You can do any like in base.html.twig and after override it:
+
+{% extends 'SopinetBootstrapExtendBundle:Base:normal.html.twig' %}
+
+{% block title %}Yourweb{% endblock %}
+    
 Problems, bugs?
 ---------------
   Please report it via github
