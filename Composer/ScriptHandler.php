@@ -21,12 +21,12 @@ class ScriptHandler
 
 			if (!file_exists("web/include")) mkdir("web/include");
 
-			$ori_dir = "bundles/sopinetbootstrapextend/export/img";
+			$ori_dir = "../bundles/sopinetbootstrapextend/export/img";
 			$link = "web/include/img";
 			if (file_exists($link)) unlink($link);
 			symlink($ori_dir, $link);
 
-			$ori_dir = "bundles/sopinetbootstrapextend/export/font";
+			$ori_dir = "../bundles/sopinetbootstrapextend/export/font";
 			$link = "web/include/font";
 			if (file_exists($link)) unlink($link);
 			symlink($ori_dir, $link);
