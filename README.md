@@ -1,6 +1,31 @@
 bootstrap-extend-bundle
 =======================
 
-It is alpha bundle for Symfony2
+What is it?
+-----------
 
-Inject jquery/bootstrap library easy and fast in your Symfony2 project.
+It is alpha bundle for Symfony2, you can add jquery, bootstrap and other libraries with easy and fast method.
+
+Thanks to [Florian Eckerstorfer](http://florianeckerstorfer.com)
+Inspirated in https://github.com/braincrafted/bootstrap-bundle
+
+Installation via composer
+-------------------------
+
+    {
+       "require": {
+            "sopinet/bootstrap-extend-bundle": "dev-master"
+        }
+    },
+    "scripts": {
+      "post-install-cmd": [
+        "Sopinet\\Bundle\\BootstrapExtendBundle\\Composer\\ScriptHandler::copyExport"
+      ],
+      "post-update-cmd": [
+        "Sopinet\\Bundle\\BootstrapExtendBundle\\Composer\\ScriptHandler::copyExport"
+      ]
+    }
+    
+Problems, bugs?
+---------------
+  Please report it via github
