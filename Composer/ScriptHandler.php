@@ -17,13 +17,9 @@ class ScriptHandler
      */
     public static function copyExport(CommandEvent $event)
     {
-			global $kernel;
-			if ( 'AppCache' == get_class($kernel) )
-			{
-				 $kernel = $kernel->getKernel();
-			}
-			$path = $kernel->getRootDir();
-			echo $path;
-			exit();
+			$ori_dir = "web/sopinetbootstrapextend/export/img";
+			$link = "web/img";
+
+			symlink($ori_dir, $link);
 		}
 }

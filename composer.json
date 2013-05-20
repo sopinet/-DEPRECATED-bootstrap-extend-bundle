@@ -22,13 +22,5 @@
     "autoload": {
         "psr-0": { "Sopinet\\Bundle\\BootstrapExtendBundle": "" }
     },
-    "target-dir": "Sopinet/Bundle/BootstrapExtendBundle",
-		"scripts": {
-			"post-install-cmd": [
-				"Sopinet\\Bundle\\BootstrapExtendBundle\\Composer\\ScriptHandler::copyExport"
-			],
-			"post-update-cmd": [
-				"Sopinet\\Bundle\\BootstrapExtendBundle\\Composer\\ScriptHandler::copyExport"
-			]
-		}
+    "target-dir": "Sopinet/Bundle/BootstrapExtendBundle"
 }
