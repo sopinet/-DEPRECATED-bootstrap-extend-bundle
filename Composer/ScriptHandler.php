@@ -17,7 +17,8 @@ class ScriptHandler
      */
     public static function copyExport(CommandEvent $event)
     {
-			$ori_dir = "web/sopinetbootstrapextend/export/img";
+			echo "Creating directory img link for BootstrapExtend"
+			$ori_dir = "bundles/sopinetbootstrapextend/export/img";
 			$link = "web/img";
 
 			symlink($ori_dir, $link);
