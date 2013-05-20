@@ -5,7 +5,7 @@
     	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     	{% stylesheets
-				'css/include.css'
+				'include/css/include.css'
     		filter='cssrewrite' %}
     		<link rel="stylesheet" href="{{ asset_url }}" />
 		{% endstylesheets %}    	
@@ -16,7 +16,7 @@
     	{% block body %}{% endblock %}
 
 		{% javascripts 
-			'js/include.js'
+			'include/js/include.js'
 		%}
 		    <script type="text/javascript" src="{{ asset_url }}"></script>
 		{% endjavascripts %}
