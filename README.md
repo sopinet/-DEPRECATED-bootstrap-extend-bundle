@@ -26,6 +26,37 @@ Installation via composer
       ]
     }
     
+Add in AppKernel the bundle
+
+    new Sopinet\Bundle\BootstrapExtendBundle\SopinetBootstrapExtendBundle(),
+    
+And add in assetic.bundle configuration
+
+    SopinetBootstrapExtendBundle
+    
+Configuration
+-------------
+
+You can configure what librey include, by default only jquery and bootstrap, for add more:
+
+    sopinet_bootstrap_extend:
+        include: [ jcrop, image-gallery, font-awesome, jqueryform, datepicker ]
+
+Usage
+-----
+
+In your twig, you can do any like:
+
+    {% extends 'SopinetBootstrapExtendBundle:Base:normal.html.twig' %}
+
+    {% block title %}Yourweb{% endblock %}
+    
+    {% block body %}
+        <div class="container">
+            Hello world!
+        </div>
+    {% endblock %}
+    
 Problems, bugs?
 ---------------
   Please report it via github
