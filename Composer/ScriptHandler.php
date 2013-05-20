@@ -19,6 +19,8 @@ class ScriptHandler
     {
 			echo "Creating directory img and font link for BootstrapExtend";
 
+			if (!file_exists("web/include")) mkdir("web/include");
+
 			$ori_dir = "bundles/sopinetbootstrapextend/export/img";
 			$link = "web/include/img";
 			if (file_exists($link)) unlink($link);
