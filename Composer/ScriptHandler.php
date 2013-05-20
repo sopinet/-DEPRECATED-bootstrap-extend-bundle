@@ -3,7 +3,7 @@
 /*
  */
 
-namespace Sopinet\Bundle\BootstapExtendBundle\Composer;
+namespace Sopinet\Bundle\BootstrapExtendBundle\Composer;
 
 use Composer\Script\CommandEvent;
 
