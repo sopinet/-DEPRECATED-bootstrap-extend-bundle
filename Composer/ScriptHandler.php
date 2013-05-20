@@ -20,12 +20,12 @@ class ScriptHandler
 			echo "Creating directory img and font link for BootstrapExtend";
 
 			$ori_dir = "bundles/sopinetbootstrapextend/export/img";
-			$link = "web/img";
+			$link = "web/include/img";
 			if (file_exists($link)) unlink($link);
 			symlink($ori_dir, $link);
 
 			$ori_dir = "bundles/sopinetbootstrapextend/export/font";
-			$link = "web/font";
+			$link = "web/include/font";
 			if (file_exists($link)) unlink($link);
 			symlink($ori_dir, $link);
 
