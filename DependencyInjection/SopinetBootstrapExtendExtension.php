@@ -69,16 +69,28 @@ class SopinetBootstrapExtendExtension extends Extension implements PrependExtens
     {
         foreach ($container->getExtensions() as $name => $extension) {
             switch ($name) {
-                case 'assetic':
+                case 'assetic':                	
                     $container->prependExtensionConfig(
                         $name,
                         array(
                             'assets' => $this->buildIncludes($config)
                         )
                     );
+                    $container->prependExtensionConfig(
+                    		$name,
+                    		array(
+                    				'bundles' => $this->buildBundles($config)
+                    		)
+                    );
                     break;
             }
         }
+    }
+    
+    private function buildBundles(array $config) {
+		$output = array();
+		$output[] = "SopinetBootstrapExtendBundle";
+		return $output;
     }
 
     private function buildIncludes(array $config)

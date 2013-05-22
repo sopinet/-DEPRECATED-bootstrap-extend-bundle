@@ -29,10 +29,10 @@ Installation via composer
 Add in AppKernel the bundle
 
     new Sopinet\Bundle\BootstrapExtendBundle\SopinetBootstrapExtendBundle(),
-    
-And add in assetic.bundle configuration
 
-    SopinetBootstrapExtendBundle
+After execute:
+
+		sudo php app/console assets:install
     
 Configuration
 -------------
