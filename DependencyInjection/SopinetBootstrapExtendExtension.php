@@ -133,6 +133,10 @@ class SopinetBootstrapExtendExtension extends Extension implements PrependExtens
 						case 'jwplayer':
 							$output['include_js']['inputs'][] = $config['assets_dir']."/jwplayer/jwplayer.js";
 						break;
+						case 'flexslider':
+							$output['include_js']['inputs'][] = $config['assets_dir']."/flexslider/jquery.flexslider-min.js";
+							$output['include_css']['inputs'][] = $config['assets_dir']."/flexslider/flexslider.css";
+						break;
 					}
 				}
 

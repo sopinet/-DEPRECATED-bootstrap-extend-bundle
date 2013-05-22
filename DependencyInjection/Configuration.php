@@ -41,7 +41,7 @@ class Configuration implements ConfigurationInterface
 								->arrayNode('include')
 									->prototype('scalar')
 									->validate()
-										->ifNotInArray(array('font-awesome','jcrop','datepicker','image-gallery','jqueryform','jwplayer'))
+										->ifNotInArray(array('font-awesome','jcrop','datepicker','image-gallery','jqueryform','jwplayer','flexslider'))
 										->thenInvalid('Invalid include library "%s"')
 									->end()
 								->end()

@@ -30,6 +30,11 @@ class ScriptHandler
 			$link = "web/include/font";
 			if (file_exists($link)) unlink($link);
 			symlink($ori_dir, $link);
+			
+			$ori_dir = "../bundles/sopinetbootstrapextend/export/images";
+			$link = "web/include/images";
+			if (file_exists($link)) unlink($link);
+			symlink($ori_dir, $link);			
 
 		}
 }
