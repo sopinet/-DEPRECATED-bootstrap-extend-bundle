@@ -1,0 +1,34 @@
+{
+    "name": "sopinet/bootstrap-extend-bundle",
+    "version": "0.0.1",
+    "description": "Twitter Bootstrap Extend for Symfony2",
+    "keywords": ["bootstrap"],
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fernando Hidalgo",
+            "email": "fhidalgo@sopinet.com",
+            "homepage": "http://sopinet.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "require-dev": {
+        "braincrafted/bootstrap-bundle": "dev-master",
+        "twitter/bootstrap": "2.3.*"
+    },
+    "autoload": {
+        "psr-0": { "Sopinet\\Bundle\\BootstrapExtendBundle": "" }
+    },
+    "target-dir": "Sopinet/Bundle/BootstrapExtendBundle",
+		"scripts": {
+			"post-install-cmd": [
+				"Sopinet\\Bundle\\BootstrapExtendBundle\\Composer\\ScriptHandler::copyExport"
+			],
+			"post-update-cmd": [
+				"Sopinet\\Bundle\\BootstrapExtendBundle\\Composer\\ScriptHandler::copyExport"
+			]
+		}
+}
