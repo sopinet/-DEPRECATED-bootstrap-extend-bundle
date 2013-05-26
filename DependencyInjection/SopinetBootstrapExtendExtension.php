@@ -96,15 +96,9 @@ class SopinetBootstrapExtendExtension extends Extension implements PrependExtens
     private function buildIncludes(array $config)
     {
         $output = array();
-
+        
         		// Scripts before
-		        foreach($config['include'] as $inc) {
-		        	switch($inc) {
-		        		case 'jqueryuitouch':
-		        			$output['include_js']['inputs'][] = $config['assets_dir']."/jqueryuitouch/js/jquery.ui.touch-punch.min.js";
-		        		break;
-		        	}
-		        }
+				// Nothing
 		        
 				// Default true
 				if ($config['include_jquery']) {
@@ -121,6 +115,9 @@ class SopinetBootstrapExtendExtension extends Extension implements PrependExtens
 				// Scripts after
 				foreach($config['include'] as $inc) {
 					switch($inc) {
+						case 'jqueryuitouch':
+							$output['include_js']['inputs'][] = $config['assets_dir']."/jqueryuitouch/js/jquery.ui.touch-punch.min.js";
+						break;						
 						case 'datepicker':
 							$output['include_css']['inputs'][] = $config['assets_dir']."/datepicker/css/datepicker.css";
 							$output['include_js']['inputs'][] = $config['assets_dir']."/datepicker/js/bootstrap-datepicker.js";
