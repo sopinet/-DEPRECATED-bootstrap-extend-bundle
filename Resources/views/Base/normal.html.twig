@@ -16,8 +16,7 @@
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->     	
     </head>
-    {% block custombody %}
-    <body>
+    {% block custombody %}<body>{% endblock %}
     	{% block body %}{% endblock %}
 
 		{% javascripts 
@@ -28,5 +27,4 @@
     	
 		{% block js %}{% endblock %}
     </body>
-    {% endblock %}
 </html>
