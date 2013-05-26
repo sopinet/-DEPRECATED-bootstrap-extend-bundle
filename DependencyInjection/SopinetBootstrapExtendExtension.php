@@ -97,6 +97,15 @@ class SopinetBootstrapExtendExtension extends Extension implements PrependExtens
     {
         $output = array();
 
+        		// Scripts before
+		        foreach($config['include'] as $inc) {
+		        	switch($inc) {
+		        		case 'jqueryuitouch':
+		        			$output['include_js']['inputs'][] = $config['assets_dir']."/jqueryuitouch/js/jquery.ui.touch-punch.min.js";
+		        		break;
+		        	}
+		        }
+		        
 				// Default true
 				if ($config['include_jquery']) {
 					$output['include_js']['inputs'][] = $config['assets_dir']."/jquery/js/jquery-1.9.1.min.js";	
@@ -109,6 +118,7 @@ class SopinetBootstrapExtendExtension extends Extension implements PrependExtens
 					$output['include_js']['inputs'][] = $config['assets_dir']."/bootstrap/js/bootstrap.min.js";
 				}
 
+				// Scripts after
 				foreach($config['include'] as $inc) {
 					switch($inc) {
 						case 'datepicker':
@@ -136,6 +146,13 @@ class SopinetBootstrapExtendExtension extends Extension implements PrependExtens
 						case 'flexslider':
 							$output['include_js']['inputs'][] = $config['assets_dir']."/flexslider/jquery.flexslider-min.js";
 							$output['include_css']['inputs'][] = $config['assets_dir']."/flexslider/flexslider.css";
+						break;
+						case 'jqueryui':
+							$output['include_js']['inputs'][] = $config['assets_dir']."/jqueryui/js/jquery-ui.min.js";
+							$output['include_css']['inputs'][] = $config['assets_dir']."/jqueryui/css/jquery-ui.min.css";
+						break;
+						case 'jsplumb':
+							$output['include_js']['inputs'][] = $config['assets_dir']."/jsplumb/js/jquery.jsPlumb-1.4.1-all-min.js";
 						break;
 					}
 				}
