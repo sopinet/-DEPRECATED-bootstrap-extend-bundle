@@ -128,8 +128,9 @@ class SopinetBootstrapExtendExtension extends Extension implements PrependExtens
 						break;
 						case 'image-gallery':
 							$output['include_css']['inputs'][] = $config['assets_dir']."/image-gallery/css/bootstrap-image-gallery.min.css";
+							$output['include_js']['inputs'][] = $config['assets_dir']."/load-image/load-image.min.js";
 							$output['include_js']['inputs'][] = $config['assets_dir']."/image-gallery/js/bootstrap-image-gallery.min.js";
-						break;						
+						break;
 						case 'jcrop':
 							$output['include_css']['inputs'][] = $config['assets_dir']."/jcrop/css/jquery.Jcrop.min.css";
 							$output['include_js']['inputs'][] = $config['assets_dir']."/jcrop/js/jquery.Jcrop.min.js";
