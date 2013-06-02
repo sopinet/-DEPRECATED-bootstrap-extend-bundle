@@ -156,6 +156,15 @@ class SopinetBootstrapExtendExtension extends Extension implements PrependExtens
 						case 'jsplumb':
 							$output['include_js']['inputs'][] = $config['assets_dir']."/jsplumb/js/jquery.jsPlumb-1.4.1-all-min.js";
 						break;
+						case 'easy-pie-chart':
+							$output['include_js']['inputs'][] = $config['assets_dir']."/easy-pie-chart/jquery.easy-pie-chart.js";
+							$output['include_css']['inputs'][] = $config['assets_dir']."/easy-pie-chart/jquery.easy-pie-chart.css";
+						break;
+						case 'jquery-flot':
+							$output['include_js']['inputs'][] = $config['assets_dir']."/jquery-flot/jquery.flot.min.js";
+							$output['include_js']['inputs'][] = $config['assets_dir']."/jquery-flot/jquery.flot.pie.min.js";
+							$output['include_js']['inputs'][] = $config['assets_dir']."/jquery-flot/jquery.flot.resize.min.js";
+						break;
 					}
 				}
 
