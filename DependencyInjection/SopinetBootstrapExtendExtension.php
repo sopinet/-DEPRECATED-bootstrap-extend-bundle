@@ -168,6 +168,9 @@ class SopinetBootstrapExtendExtension extends Extension implements PrependExtens
 						case 'fuelux-wizard':
 							$output['include_js']['inputs'][] = $config['assets_dir']."/fuelux/fuelux.wizard.min.js";
 						break;
+						case 'jquery-mask':
+							$output['include_js']['inputs'][] = $config['assets_dir']."/jquery-mask/jquery.maskedinput.min.js";
+						break;
 					}
 				}
 
