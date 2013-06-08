@@ -171,6 +171,9 @@ class SopinetBootstrapExtendExtension extends Extension implements PrependExtens
 						case 'jquery-mask':
 							$output['include_js']['inputs'][] = $config['assets_dir']."/jquery-mask/jquery.maskedinput.min.js";
 						break;
+						case 'jquery-validate':
+							$output['include_js']['inputs'][] = $config['assets_dir']."/jquery-validate/jquery.validate.min.js";
+						break;
 					}
 				}
 
