@@ -174,6 +174,9 @@ class SopinetBootstrapExtendExtension extends Extension implements PrependExtens
 						case 'jquery-validate':
 							$output['include_js']['inputs'][] = $config['assets_dir']."/jquery-validate/jquery.validate.min.js";
 						break;
+						case 'jquery-collagePlus':
+							$output['include_js']['inputs'][] = $config['assets_dir']."/jquery-collagePlus/jquery.collagePlus.min.js";
+						break;
 					}
 				}
 
