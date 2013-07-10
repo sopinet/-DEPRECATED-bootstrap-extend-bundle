@@ -177,6 +177,9 @@ class SopinetBootstrapExtendExtension extends Extension implements PrependExtens
 						case 'jquery-collagePlus':
 							$output['include_js']['inputs'][] = $config['assets_dir']."/jquery-collagePlus/jquery.collagePlus.min.js";
 						break;
+						case 'jquery-md5':
+							$output['include_js']['inputs'][] = $config['assets_dir']."/jquery-md5/jquery.md5.js";
+						break;
 					}
 				}
 
