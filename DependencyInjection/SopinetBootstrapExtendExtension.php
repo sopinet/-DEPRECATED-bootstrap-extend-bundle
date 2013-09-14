@@ -120,7 +120,7 @@ class SopinetBootstrapExtendExtension extends Extension implements PrependExtens
 						break;
 						case 'jquery-chosen':
 							$output['include_css']['inputs'][] = $config['assets_dir']."/jquery-chosen/css/chosen.css";
-							$output['include_js']['inputs'][] = $config['assets_dir']."/jquery-chosen/js/jquery.chosen.min.js";
+							$output['include_js']['inputs'][] = $config['assets_dir']."/jquery-chosen/js/chosen.jquery.min.js";
 						case 'xeditable':
 							$output['include_css']['inputs'][] = $config['assets_dir']."/bootstrap-editable/css/bootstrap-editable.css";
 							$output['include_js']['inputs'][] = $config['assets_dir']."/bootstrap-editable/js/bootstrap-editable.min.js";
