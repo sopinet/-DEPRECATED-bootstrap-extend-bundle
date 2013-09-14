@@ -118,6 +118,9 @@ class SopinetBootstrapExtendExtension extends Extension implements PrependExtens
 						case 'jqueryuitouch':
 							$output['include_js']['inputs'][] = $config['assets_dir']."/jqueryuitouch/js/jquery.ui.touch-punch.min.js";
 						break;
+						case 'jquery-chosen':
+							$output['include_css']['inputs'][] = $config['assets_dir']."/jquery-chosen/css/chosen.css";
+							$output['include_js']['inputs'][] = $config['assets_dir']."/jquery-chosen/js/jquery.chosen.min.js";
 						case 'xeditable':
 							$output['include_css']['inputs'][] = $config['assets_dir']."/bootstrap-editable/css/bootstrap-editable.css";
 							$output['include_js']['inputs'][] = $config['assets_dir']."/bootstrap-editable/js/bootstrap-editable.min.js";
