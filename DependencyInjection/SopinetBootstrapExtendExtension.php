@@ -183,6 +183,11 @@ class SopinetBootstrapExtendExtension extends Extension implements PrependExtens
 						case 'jquery-md5':
 							$output['include_js']['inputs'][] = $config['assets_dir']."/jquery-md5/jquery.md5.js";
 						break;
+						case 'xeditable-select2':
+							$output['include_js']['inputs'][] = $config['assets_dir']."/select2/js/select2.js";
+							$output['include_css']['inputs'][] = $config['assets_dir']."/select2/css/select2.css";
+							$output['include_css']['inputs'][] = $config['assets_dir']."/select2/css/select2-bootstrap.css";
+						break;
 					}
 				}
 
