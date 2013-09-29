@@ -167,6 +167,7 @@ class SopinetBootstrapExtendExtension extends Extension implements PrependExtens
 							$output['include_js']['inputs'][] = $config['assets_dir']."/jquery-flot/jquery.flot.min.js";
 							$output['include_js']['inputs'][] = $config['assets_dir']."/jquery-flot/jquery.flot.pie.min.js";
 							$output['include_js']['inputs'][] = $config['assets_dir']."/jquery-flot/jquery.flot.resize.min.js";
+							$output['include_js']['inputs'][] = $config['assets_dir']."/jquery-flot/jquery.flot.time.js";
 						break;
 						case 'fuelux-wizard':
 							$output['include_js']['inputs'][] = $config['assets_dir']."/fuelux/fuelux.wizard.min.js";
